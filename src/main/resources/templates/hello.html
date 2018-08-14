@@ -1,0 +1,141 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Hello Facebook</title>
+	</head>
+	<body>
+		<h3>Hello, <span th:text="${userProfile.name}">Name</span>!</h3>
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><span th:text="${userProfile.firstName}">First Name</span></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><span th:text="${userProfile.email}">Email</span></td>
+			</tr>
+			<tr>
+				<td>Birthday</td>
+				<td><span th:text="${userProfile.birthday }">Birthday</span></td>
+			</tr>
+			<tr>
+				<td>Hometown</td>
+				<td><span th:text="${userProfile.hometown}">Home Town</span></td>
+			</tr>
+			<tr>
+				<td>Verified</td>
+				<td><span th:text="${userProfile.verified}">Verified</span></td>
+			</tr>
+			<tr>
+				<td>Religion</td>
+				<td><span th:text="${userProfile.religion}">Religion</span></td>
+			</tr>
+			<tr>
+				<td>Relationship Status</td>
+				<td><span th:text="${userProfile.relationshipStatus}">Relationship Status</span></td>
+			</tr>
+			<tr>
+				<td>Political</td>
+				<td><span th:text="${userProfile.political}">Political</span></td>
+			</tr>
+		<!---	<tr>
+				<td>Is Identity Verified</td>
+				<td><span th:text="${userProfile.isIdentityVerified}">Is Identity Verified</span></td>
+			</tr>
+		-->	<tr>
+				<td>Age Range</td>
+				<td><span th:text="${userProfile.ageRange }">Age Range</span></td>
+			</tr>
+
+			<tr>
+				<td>Inspirational People</td>
+				<td>
+					<ul>
+						<li th:each="person: ${userProfile.inspirationalPeople}">
+							<span th:text="${person.name}">Person Name</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Feeds</td>
+				<td>
+					<ul>
+						<li th:each="feed: ${feeds}">
+							<span th:text="${feed.name}">Feed</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Albums</td>
+				<td>
+					<ul>
+						<li th:each="album: ${albums}">
+							<span th:text="${album.name}">Album</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Sports</td>
+				<td>
+					<ul>
+						<li th:each="sport: ${userProfile.sports}">
+							<span th:text="${sport.name}">Sport</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Favorite Teams</td>
+				<td>
+					<ul>
+						<li th:each="team: ${userProfile.favoriteTeams}">
+							<span th:text="${team.name}">Favorite Teams</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Interested In</td>
+				<td>
+					<ul>
+						<li th:each="interest: ${userProfile.interestedIn}">
+							<span th:text="${interest.name}">Interested In</span> <!-- TODO to .name sprawdzić -->
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Security Settings</td>
+				<td>
+					<ul>
+						<li th:each="security: ${userProfile.securitySettings}">
+							<span th:text="${security.secureBrowsing.isEnabled}">Security Settings</span> <!-- TODO to .name sprawdzić -->
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Games</td>
+				<td>
+					<ul>
+						<li th:each="game: ${games}">
+							<span th:text="${games.name}">Game</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+	<!--		<tr>
+				<td>Pages Liked</td>
+				<td>
+					<ul>
+						<li th:each="pl: ${pagesLiked}">
+							<span th:text="${pl.name}">Pages Liked</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		-->*- </table>
+	</body>
+</html>
